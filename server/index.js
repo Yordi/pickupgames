@@ -5,5 +5,3 @@ var express = require('express'),
 
 // Add middleware
 app.use(express.static(path.join(__dirname, '../public')));
-
-app.listen(8000);

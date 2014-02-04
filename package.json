@@ -2,7 +2,7 @@
   "name": "Sporten",
   "version": "0.0.1",
   "description": "Sporten, Where sports happen!",
-  "main": "./server/index.js",
+  "main": "/server/index.js",
   "dependencies": {
     "express": "~3.4.8",
     "mongoose": "~3.8.6",
