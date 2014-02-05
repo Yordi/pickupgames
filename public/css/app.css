@@ -1,4 +1,40 @@
 body{
 	background: #fff;
-	background-image: url('../images/Sporten.png');
+	/*background-image: url('../images/Sporten.png');*/
+}
+
+#map{
+	position: absolute;
+	top: 5%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+header{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 5%;
+	background: #73aad9;
+}
+
+header #logo{
+	margin: 1%;
+}
+
+header #profile{
+	float: right;
+	margin: .5%;
+}
+
+header #profile img{
+	height: : 35px;
+	width: 35px;
+	border-radius: 5px;
+}
+
+header div{
+	display: inline-block;
 }
