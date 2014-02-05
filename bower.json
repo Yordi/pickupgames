@@ -26,6 +26,8 @@
   "dependencies": {
     "angularjs": "*",
     "jquery": "~2.1.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "requirejs": "~2.1.10",
+    "requirejs-plugins": "~1.0.2"
   }
 }
