@@ -1,4 +1,3 @@
-// Here is the basic server 
 var express = require('express'),
 	app = express(),
 	path = require('path');

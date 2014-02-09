@@ -1,12 +1,11 @@
 body{
-	background: #000;
-	background-image: url('../images/Sporten.png');
+	background: #000 url('../images/Sporten.png') no-repeat;
 }
 
 #map{
 	position: absolute;
 	top: 5%;
-	bottom: 0;
+	bottom: 4%;
 	right: 0;
 	left: 0;
 }
@@ -38,4 +37,12 @@ header #profile img{
 
 header div{
 	display: inline-block;
+}
+
+footer {
+	font-size: 12px;
+	background: #333;
+	overflow: hidden;
+	clear: both;
+	padding: 0 44px;
 }
