@@ -1,4 +1,0 @@
-pickupgames
-===========
-
-geolocalisation apps
