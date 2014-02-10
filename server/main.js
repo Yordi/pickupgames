@@ -1,8 +1,11 @@
 var express = require('express'),
 	app = express();
 	
+var env = process.env.NODE_ENV || 'development';
 
+var config = require('./config/config')(env);
 
 require('./config/express')(app);
+require('./config/mongoose')(config);
 
-app.listen(Number(process.env.PORT || 5000));	
+app.listen(config.port);	
