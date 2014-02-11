@@ -1,8 +1,9 @@
 body{
-	background: #000 url('../images/Sporten.png') no-repeat;
+	/*background: url('../images/Sporten.png') no-repeat;*/
+	background: #000;
 }
 
-#map{
+#map, #app{
 	position: absolute;
 	top: 5%;
 	bottom: 4%;
@@ -10,14 +11,36 @@ body{
 	left: 0;
 }
 
+#app{
+	background: rgba(102,105,104,0.9);
+	z-index: 500;
+	opacity: .6;
+}
+
+.login{
+	position: absolute;
+	border: 1px solid #ccc;
+	background: #73aad9;
+	opacity: 1;
+	border-radius: 5px;
+	top: 50px;
+	right: 6px;
+	height: 500px;
+	width: 400px;
+}
+
+.login div{
+	margin: 10px;
+}
+
 header{
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
-	height: 5%;
 	background: #73aad9;
-	min-height: 50px;
+	height: 50px;
+	z-index: 1000;
 }
 
 header #logo{

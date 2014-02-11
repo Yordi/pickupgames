@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<title>Sporten Inc</title>
-		<link rel="stylesheet" href="css/app.css">
 		<link rel="icon" type="image/ico" href="images/favicon.ico">
-		<link rel="stylesheet" href="vendor/bootstrap//dist/css/bootstrap.css">
+		<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="css/app.css">
 		<script src="vendor/jquery/jquery.js"></script>
 		<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
 	</head>
@@ -15,11 +15,44 @@
 			<img src="images/29/Sporten29.ico" alt="Sporten Logo">
 		</div>
 		<div id="search"></div>
-		<!-- <div id="profile">
+		<div id="profile">
 			<img src="images/davy.png" alt="Sporten Logo">
-		</div> -->
+		</div>
 	</header>
-	<content id="map"></content>
+	<section id="map"></section>
+	<section id="app" ng-controller="mainCtrl">
+		<div class="login pull-right">
+			<div style="text-align: center;">
+				<h3>Login</h3>
+			</div>
+			<br>
+			<div>
+				<form>
+					<div>
+						<input type="button" value="Use your facebook account" class="form-control" ng-click="init()">
+					</div>
+					<div style="text-align: center;">
+						<span>Or</span>
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">
+					  	<i class="icon-envelope"></i>
+					  </span>
+					  <input type="text" class="form-control" placeholder="Username">
+					</div>
+					<div class="input-group">
+					  <span class="input-group-addon">
+					  	<i class="icon-key"></i>
+					  </span>
+					  <input type="password" class="form-control" placeholder="Password">
+					</div>
+					<div>
+						<input type="submit" value="login" class="form-control" ng-click="init()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 	<footer></footer>
 	<script data-main="js/main" src="vendor/requirejs/require.js"></script>
 	</body>
