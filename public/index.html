@@ -14,13 +14,17 @@
 		<div id="logo">
 			<img src="images/29/Sporten29.ico" alt="Sporten Logo">
 		</div>
-		<div id="search"></div>
-		<div id="profile">
-			<img src="images/davy.png" alt="Sporten Logo">
-		</div>
+		<section>
+			<div id="search"></div>
+			<!-- <div id="profile">
+				<img src="images/davy.png" alt="Sporten Logo">
+			</div> -->
+		</section>
 	</header>
-	<section id="map"></section>
-	<section id="app" ng-controller="mainCtrl">
+	<section id="map" ng-controller="mapsCtrl" ng-init="initMap()">
+
+	</section>
+	<section id="app" ng-controller="mainCtrl" ng-show="!authenticated">
 		<div class="login pull-right">
 			<div style="text-align: center;">
 				<h3>Login</h3>

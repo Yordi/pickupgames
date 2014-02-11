@@ -36,5 +36,8 @@
     "angular-animate": "~1.2.12",
     "angular-route": "~1.2.12",
     "angular-resource": "~1.2.12"
+  },
+  "resolutions": {
+    "font-awesome": "~3.0.0"
   }
 }

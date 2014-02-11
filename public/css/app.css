@@ -12,9 +12,16 @@ body{
 }
 
 #app{
-	background: rgba(102,105,104,0.9);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(102,105,104, 0)), to(rgba(0, 0, 0, 1)));
 	z-index: 500;
 	opacity: .6;
+	transition-property: left;
+  	transition-duration: .2s;
+  	transition-timing-function: linear;
+}
+
+#app-close{
+	left: 1000px;
 }
 
 .login{
@@ -39,7 +46,7 @@ header{
 	right: 0;
 	left: 0;
 	background: #73aad9;
-	height: 50px;
+	height: 40px;
 	z-index: 1000;
 }
 
