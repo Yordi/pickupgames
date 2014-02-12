@@ -126,7 +126,7 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?sensor=false'],func
 		// Add marker on the map!
 		var marker = new google.maps.Marker({
 		    position: new google.maps.LatLng(37.78359, -122.40890),
-		    title:"Hello World!",
+		    title:"@davyengone",
 		    map: map,
 		    icon: 'images/36/SportenPhoto36.ico',
 		    draggable: true,
