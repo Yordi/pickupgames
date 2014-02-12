@@ -128,7 +128,7 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?sensor=false'],func
 		    position: new google.maps.LatLng(37.78359, -122.40890),
 		    title:"@davyengone",
 		    map: map,
-		    icon: 'images/36/SportenPhoto36.ico',
+		    icon: 'images/36/Sporten36.ico',
 		    draggable: true,
 		    animation: google.maps.Animation.DROP
 		});
