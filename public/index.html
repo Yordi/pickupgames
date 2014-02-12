@@ -14,11 +14,41 @@
 		<div id="logo">
 			<img src="images/29/Sporten29.ico" alt="Sporten Logo">
 		</div>
-		<section>
-			<div id="search"></div>
-			<!-- <div id="profile">
-				<img src="images/davy.png" alt="Sporten Logo">
-			</div> -->
+		<section class="navbar pull-right">
+			<div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+		      <div class="container">
+		        <div class="navbar-header">
+		          	<div id="logo" class="navbar-brand">
+						<img src="images/29/Sporten29.ico" alt="Sporten Logo">
+					</div>
+		        </div>
+		        <!-- <form class="navbar-form navbar-left" role="search">
+			        <div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="icon-search"></i>
+							</span>
+							<input type="text" class="form-control" placeholder="Username">
+						</div>
+			        </div>
+		      	</form> -->
+		        <div class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav navbar-right pull-right">
+		            <li><a href="/mails">
+		            	<i class="icon-envelope-alt icon-large"></i>
+		            </a></li>
+		            <li><a href="/chat">
+		            	<i class="icon-comments icon-large"></i>
+		            </a></li>
+		            <li>
+		            	<a href="/profile">
+		            		<i class="icon-user icon-large"></i>
+		            	</a>
+		            </li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		      </div>
+		    </div>
 		</section>
 	</header>
 	<section id="map" ng-controller="mapsCtrl" ng-init="initMap()">

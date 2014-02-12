@@ -11,6 +11,26 @@ body{
 	left: 0;
 }
 
+.container{
+	width: 99% !important;
+	height: 40px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+
+.navbar-brand {
+	margin: 10px
+}
+.navbar-inverse{
+	background: #73aad9;
+	border-color: #ccc;
+}
+
+.navbar{
+	min-height: 40px !important;
+}
+
 #app{
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(102,105,104, 0)), to(rgba(0, 0, 0, 1)));
 	z-index: 500;
@@ -51,7 +71,7 @@ header{
 }
 
 header #logo{
-	margin: .5%;
+	margin: -7px;
 }
 
 header #profile{

@@ -2,19 +2,71 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?sensor=false'],func
 
 	var maps = angular.module('maps', []);
 
-	maps.controller('mapsCtrl', ['$scope', function($scope){
-		$scope.initMap = initMap;
+	maps.controller('mapsCtrl', ['$scope', '$http', function($scope, $http){
+		var key = 'AIzaSyCMULw9xVBhp9MxFYUgBLeUXfCRihovhm8';
+		
+		$scope.getVenues = function getVenues(){
+			$http({
+		      method: 'GET',
+		      url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.78359,-122.40890&radius=10000&types=food&name=harbour&sensor=false&key='+key,
+		      headers: {
+		        'Content-Type': 'application/json; charset=utf-8',
+		        'dataType': 'json',
+		        'data': 'jsonp'
+		      }
+		    })
+			.success(function(data, status, headers, config) {
+				$scope.code = status;
+				$scope.results = data;
+				console.log(data);
+			}).error(function(data, status, headers, config) {
+				console.log(data);
+			});
+		}
+
+		$scope.initMap = initMap ($scope);
 	}]);
 
 	return maps;
 
+	function centerMapToUserPosition(map, $scope){
+		var initialLocation = null;
+		if(navigator.geolocation) {
+			browserSupportFlag = true;
+			navigator.geolocation.getCurrentPosition(function(position) {
+			  initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+			  $scope.initialLocation= initialLocation;
+			  map.setCenter(initialLocation);
+			}, function() {
+				console.log('inside second function');
+			  handleNoGeolocation(browserSupportFlag);
+			});
+		}
+		else {
+		browserSupportFlag = false;
+			handleNoGeolocation(browserSupportFlag);
+		}
 
-	function initMap(){
+		function handleNoGeolocation(errorFlag) {
+			if (errorFlag == true) {
+			  initialLocation = new google.maps.LatLng(37.4419, -122.1419);
+			} else {
+			  initialLocation = new google.maps.LatLng(37.4419, -122.1419);
+			}
+			map.setCenter(initialLocation);
+			return initialLocation;
+		}
+
+		return initialLocation;
+	}
+
+
+	function initMap($scope){
 		var canvas = document.getElementById('map');
 
-		var center = new google.maps.LatLng(37.4419, -122.1419);
+		$scope.getVenues();
+
 		var map = new google.maps.Map(canvas, {
-	        center: center,
 	        zoom: 15,
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
 	        panControl: false,
@@ -29,16 +81,19 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?sensor=false'],func
 	        }
 	    });
 
+	    centerMapToUserPosition(map, $scope);
+	    
+
     	var content = '<div class="info"> When: <input type="text"><br/>Sport: <input type="text"> <br/>Level: <input type="text"><br/>Group: <input type="text"><input type="button" value="Add"/></div>';
 
 		// Add marker on the map!
 		var marker = new google.maps.Marker({
-		    position: center,
+		    position: new google.maps.LatLng(37.78359, -122.40890),
 		    title:"Hello World!",
 		    map: map,
 		    icon: 'images/36/Sporten36.ico',
 		    draggable: true,
-		    animation: google.maps.Animation.BOUNCE
+		    animation: google.maps.Animation.DROP
 		});
 
 		google.maps.event.addListener(marker, 'click', function(){
@@ -52,7 +107,7 @@ define(['angular', 'async!http://maps.google.com/maps/api/js?sensor=false'],func
 
 		google.maps.event.addListener(map, 'click', function(event){
 			var newMarker = new google.maps.Marker({
-				icon: 'images/36/Sporten36.ico',
+				icon: 'images/36/SportenBBall36.ico',
 				map: map,
 				position: event.latLng,
 				animation: google.maps.Animation.DROP,
